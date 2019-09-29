@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Random Password Generator</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+             <div class="col-lg-8 col-sm-12 mx-auto">
+                <div class="contentdiv">
+                    <h1>Password Generator</h1>
+                    <br />
+                    <input type="text" id="display">
+                    <br />
+                    <input type="range" min="0" max="50" name="slider" id="slider">
+                    <br />
+    <button type="generateButton" class="btn btn-primary btn-lg">Generate Password</button>
+    <button type="copyButton" class="btn btn-secondary btn-lg">Copy to Clipboard</button>
+                <div id="length">
+
+                </div>
+                </div>
+            </div>
+        </div>
+</div>
+<script>
+    //target buttons
+    var genButton = document.getElementById("generateButton");
+    var coButton = document.getElementById("copyButton");
+
+    //Generate Random Password
+    function generatePass() {
+
+    
+
+    //Set password length
+    var passLength = document.getElementById("slider").passValues;
+
+    //Possible password values
+    var passValues = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz1234567890!@#$%^&*()_+=-";
+
+    var password ="";
+
+    // for loop to choose password characters
+    for(var i =0; i <= passLength; i++){
+        password = password + passValues.charAt(Math.floor(Math.random() * Math.floor(passValues.length -1)));
+    }
+
+    //Add password to disply/textarea
+    document.getElementById("display").passValues = password;
+
+    }
+
+ 
+
+//set default length of 25
+document.getElementById("length").innerHTML = "Length: 25";
+//function to  set length based on slider
+document.getElementById("slider").oninput = function(){
+
+    if(document.getElementById("slider").value > 0){
+        document.getElementById("length").innerHTML = "Length: " + document.getElementById("slider").value;
+
+    }
+    else{
+        document.getElementById("length").innerHTML = "Length: 1";
+    }
+
+}
+</script>
+</body>
+</html>
