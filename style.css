@@ -4,14 +4,23 @@
     background-color: orange;
     padding: 20px;
     width: 100%;
+    
 }
 #display{
-    width: 100%
+    border-style: dotted;
+    width: 100%;
+    padding: 30px;
+    
+    
 }
 #slider{
     width: 100%;
+    
 }
 #length{
     display: inline-block;
     width: 100px;
+}
+body{
+ background-color: black;
 }
