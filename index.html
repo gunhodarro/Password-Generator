@@ -20,7 +20,7 @@
                     <input type="range" min="0" max="50" name="slider" id="slider">
                     <br />
     <button type="button" onclick="generatePass()"  class="btn btn-primary btn-lg">Generate Password</button>
-    <button type="button" onclick=""  class="btn btn-secondary btn-lg">Copy to Clipboard</button>
+    <button type="button" onclick="copyPassword()"  class="btn btn-secondary btn-lg">Copy to Clipboard</button>
                 <div id="length">
 
                 </div>
@@ -57,22 +57,20 @@
     else{
         document.getElementById("length").innerHTML = "Length: 1";
     }
+}
+   
     //function to copy password to clipboard
     function copyPassword(){
-    document.getElementById("display").select();
-    document.execCommand('copy');
-    alert(`${document.getElementById("display").values} has been copied to clipboard.`);
+    
+        document.getElementById("display").select();
+    
+        document.execCommand("Copy");
+    
+        alert("Password Copied to Clipboard!");
 }
 
 
 
-
-
-
-
-//call the copyPassword function only when user clicks on copy to clipboard button
-copyButton.addEventListener("click", copyPassword);
-}
 </script>
 </body>
 </html>
