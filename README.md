@@ -1,1 +1,1 @@
-# Password-Generator
+As a user I would like to generate a random password with several condtions to be met. These connditions would be upper and lower case letters, numbers, symbols and special charcters. This is a simple way to generate a secure and hard password that could be hacked. You have the ability to choose the length of the passoword you would like to be created. It then can be copied and used as needed.
